@@ -1,0 +1,51 @@
+import { Page, Locator } from "@playwright/test";
+
+export class UserManagementPage {
+  constructor(private readonly page: Page) {}
+
+  async clickUserManagement(): Promise<void> {
+    await this.page.getByRole("button", { name: "User Management" }).click();
+  }
+
+  async navigateToUserPage(): Promise<void> {
+    await this.page.getByRole("button", { name: "Users" }).click();
+  }
+
+  async clickAddNewUser(): Promise<void> {
+    await this.page.getByRole("button", { name: "Add New" }).click();
+  }
+
+  async enterLoginID(employeeId: string): Promise<void> {
+    await this.page.locator("#root_employeeId").fill(employeeId);
+  }
+
+  async clickValidateButton(): Promise<void> {
+    await this.page.getByRole("button", { name: "Validate" }).click();
+  }
+
+  async enterUserRoleId(): Promise<void> {
+    await this.page.locator("#root_userRoleId").click();
+    await this.page
+      .getByRole("option", { name: "Administrative Officer" })
+      .waitFor({ state: "visible" });
+    await this.page
+      .getByRole("option", { name: "Administrative Officer" })
+      .click();
+  }
+
+  async enterSubmitButton(): Promise<void> {
+    await this.page.getByRole("button", { name: "Submit" }).click();
+  }
+
+  async EnterListNumber(outlined: string): Promise<void> {
+    await this.page.locator("#outlined-basic").fill(outlined);
+  }
+
+  async isUserManagementPageLoad(): Promise<boolean> {
+    return await this.page
+      .locator(
+        "//nav[@aria-label='breadcrumb']//p[normalize-space()='User Management']",
+      )
+      .isVisible();
+  }
+}
