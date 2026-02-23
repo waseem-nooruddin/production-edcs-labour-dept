@@ -127,11 +127,71 @@ export class HrmsPage {
     await this.page.locator("#root_dateOfJoined").fill(date);
   }
 
-  async enterNoticeDate() {
+  async enterenterworkShipCategoryI(workShipCategoryId: string) {
     await this.page.locator("#root_workShipCategoryId").click();
+    await this.page.getByRole("option", { name: workShipCategoryId }).click();
   }
 
-  async selectNoticePeriod(NoticeDate: string) {
+  async enterpriorNotiePeriod(NoticeDate: string) {
+    await this.page.locator("#root_priorNotiePeriod").first().click();
     await this.page.getByRole("option", { name: NoticeDate }).click();
+  }
+
+  async enterConfirmationDueOn(date: string) {
+    await this.page.locator("#root_confirmationdueon").click();
+    await this.page.locator("#root_confirmationdueon").fill(date);
+  }
+
+  async enterpersonalGrade(grade: string) {
+    await this.page.locator("#root_personalGrade").click();
+    await this.page.getByRole('option', { name: grade }).click();
+  }
+
+  async enterCostCenter(costCenter: string) {
+    await this.page.locator("#root_costCenter").click();
+    await this.page.getByRole("option", { name: costCenter }).click();
+  }
+
+  async enterjobCategory(jobCategory: string) {
+    await this.page.locator("#root_jobCategory").click();
+    await this.page.getByRole("option", { name: jobCategory }).click();
+  }
+
+  async enterCurrentDesignation(currentDesignation: string) {
+    await this.page.locator("#root_currentDesignation").click();
+    await this.page.getByRole("option", { name: currentDesignation }).click();
+  }
+
+  async enterdateofDesignation(dateofDesignation: string) {
+    await this.page.locator("#root_dateofDesignation").click();
+    await this.page.locator("#root_dateofDesignation").fill(dateofDesignation);
+  }
+
+  async enterreportingPerson(reportingPerson: string) {
+    await this.page.locator("#root_reportingPerson").click();
+    await this.page.getByRole("option", { name: reportingPerson }).click();
+  }
+
+  async clickAddButton() {
+    await this.page.getByRole("button", { name: "ADD" }).first().click();
+  }
+
+  async enterpermanenetLocation(permanenetLocation: string) {
+    await this.page.locator("#root_permanenetLocation").click();
+    await this.page.getByRole("option", { name: permanenetLocation }).click();
+  }
+
+  async enterTemporaryLocation(temporaryLocation: string) {
+    await this.page.locator("#root_temporaryLocation").click();
+    await this.page.getByRole("option", { name: temporaryLocation }).click();
+  }
+
+  async enterfromDate(fromDate: string) {
+    await this.page.locator("#root_fromDate").click();
+    await this.page.locator("#root_fromDate").fill(fromDate);
+  }
+
+  async clickLocationDetailsAddButton() {
+    await this.page.getByRole("button", { name: "ADD" }).click();
   }
 }

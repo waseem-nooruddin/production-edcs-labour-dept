@@ -11,11 +11,11 @@ export const testdata = {
   userId_Restriction: "166509rn - Qa One",
 
   // Branch Data
-  slectBranch: "Head Office - Default",
-  branchName : "Kandy",
+  slectBranch: "Head Office (999) - Default",
+  branchName: "Kandy",
   Division: "Default",
   Resigned: "NOT AVAILABLE",
-  EmployeeType: "Probation",  
+  EmployeeType: "Probation",
 
   // Menu Action List
   searchMenuActionList: "335",
@@ -25,20 +25,4 @@ export const testdata = {
   enterRoleDescription: "This is a test roles",
   selectUserRole: "EDCS Admin",
   roleName_AdminRole: "EDCS Admin Role",
-
-  // HRMS - Employee Registration (Basic Info)
-  hrms_enterFullName: "Waseem Nooruddin",
-  hrms_enterInitials: "Mr.",
-  hrms_enterSurName: "Nooruddin",
-  hrms_enterSalutation: "Waseem Nooruddin",
-
-  // HRMS - Employee Registration (Additional Info)
-  hrms_dateOfBirth: "1999-01-01",
-  hrms_placeOfBirth: "Karachi",
-  hrms_bloodGroup: "A+",
-  hrms_gender: "Male",
-  hrms_nic: "199629810095",
-  hrms_nicDateOfIssue: "2010-01-01",
-  hrms_dateOfJoin: "2026-01-01",
-  hrms_noticeDate: "ONE MONTH",
 };

@@ -40,7 +40,6 @@ test.describe("Role Creation Page", () => {
       ).toBeVisible();
       const roleCreationPage = new RoleCreationPage(page);
       await roleCreationPage.clickAddRoleCreation();
-    
     },
   );
 
@@ -58,7 +57,9 @@ test.describe("Role Creation Page", () => {
       const roleCreationPage = new RoleCreationPage(page);
       await roleCreationPage.clickAddRoleCreation();
       await roleCreationPage.enterRoleName(testdata.enterRoleName);
-      await roleCreationPage.enterRoleDescription(testdata.enterRoleDescription);
+      await roleCreationPage.enterRoleDescription(
+        testdata.enterRoleDescription,
+      );
     },
   );
 });
