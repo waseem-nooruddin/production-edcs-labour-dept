@@ -87,10 +87,12 @@ export default class TeamsReporter implements Reporter {
   }
 
   async onEnd(result: FullResult): Promise<void> {
-    // Allow disabling Teams notifications via flag (without removing the webhook URL)
-    const sendReport = process.env.SEND_TEAMS_REPORT;
-    if (sendReport === 'false' || sendReport === '0') {
-      console.log('ℹ️  Teams notification is disabled (SEND_TEAMS_REPORT=false). Skipping.');
+    // Allow disabling Teams notifications via flag (without removing the webhook URL).
+    // Accepted: true | 1  → send (also the default when the variable is not set at all)
+    //           false | 0 → skip
+    const sendReport = process.env.SEND_TEAMS_REPORT?.toLowerCase().trim();
+    if (sendReport !== undefined && sendReport !== 'true' && sendReport !== '1') {
+      console.log(`ℹ️  Teams notification is disabled (SEND_TEAMS_REPORT=${process.env.SEND_TEAMS_REPORT}). Skipping.`);
       return;
     }
 
@@ -439,11 +441,16 @@ export default class TeamsReporter implements Reporter {
   private getActionButtons(): any[] {
     const actions: any[] = [];
 
-    // Add link to HTML report if available
-    if (process.env.PLAYWRIGHT_REPORT_URL) {
+    // Add link to HTML report if available AND the button is not explicitly disabled.
+    // SHOW_HTML_REPORT_BUTTON: true | 1  → show button (default when unset)
+    //                          false | 0 → hide button
+    const showButton = process.env.SHOW_HTML_REPORT_BUTTON?.toLowerCase().trim();
+    const buttonEnabled = showButton === undefined || showButton === 'true' || showButton === '1';
+
+    if (buttonEnabled && process.env.PLAYWRIGHT_REPORT_URL) {
       actions.push({
         '@type': 'OpenUri',
-        name: '📊 View Report',
+        name: '📊 View HTML Report',
         targets: [{ os: 'default', uri: process.env.PLAYWRIGHT_REPORT_URL }],
       });
     }
