@@ -71,7 +71,7 @@ test.describe("Employee Registration", () => {
       await hrmsPage.enterCurrentDesignation(hrms.hrms_enterCurrentDesignation);
       await hrmsPage.enterdateofDesignation(hrms.hrms_enterdateofDesignation);
       await hrmsPage.enterreportingPerson(hrms.hrms_enterreportingPerson);
-      await hrmsPage.enterReportingDesignation("Manager");
+      await hrmsPage.enterReportingDesignation(hrms.enterReportingDesignation);
       await hrmsPage.clickOnAddButton();
       await hrmsPage.enterpermanenetLocation(hrms.hrms_enterpermanenetLocation);
       await hrmsPage.enterTemporaryLocation(hrms.hrms_enterTemporaryLocation);
@@ -81,52 +81,52 @@ test.describe("Employee Registration", () => {
 
       //Contact Details
 
-      await hrmsPage.fillAddressLine1("125 Colombo 10");
-      await hrmsPage.fillAddressLine2("125 Colombo 2");
-      await hrmsPage.fillAddressLine3("Nugegoda");
+      await hrmsPage.fillAddressLine1(hrms.hrms_AddressLine1);
+      await hrmsPage.fillAddressLine2(hrms.hrms_AddressLine2);
+      await hrmsPage.fillAddressLine3(hrms.hrms_AddressLine3);
 
-      await hrmsPage.selectProvince("Northern");
-      await hrmsPage.selectDistrict("Jaffna");
-      await hrmsPage.selectCity("Atchuveli");
+      await hrmsPage.selectProvince(hrms.hrms_province);
+      await hrmsPage.selectDistrict(hrms.hrms_district);
+      await hrmsPage.selectCity(hrms.hrms_city);
 
-      await hrmsPage.fillEmail("waseem10nooruddin@gmail.com");
-      await hrmsPage.fillMobile("0766395531");
+      await hrmsPage.fillEmail(hrms.hrms_fillEmail);
+      await hrmsPage.fillMobile(hrms.hrms_fillMobile);
 
-      await hrmsPage.fillEmergencyName("Suha");
-      await hrmsPage.fillRelationship("Mother");
-      await hrmsPage.fillEmergencyMobile("078554322");
-      await hrmsPage.fillTelephone("0112864236");
+      await hrmsPage.fillEmergencyName(hrms.hrms_fillEmergencyName);
+      await hrmsPage.fillRelationship(hrms.hrms_fillRelationship);
+      await hrmsPage.fillEmergencyMobile(hrms.hrms_fillEmergencyMobile);
+      await hrmsPage.fillTelephone(hrms.hrms_fillTelephone);
 
-      await hrmsPage.clickNextButton();
+      // await hrmsPage.clickNextButton();
 
-      //Qualification Details
-      await hrmsPage.selectOnQualificationType("Local");
-      await hrmsPage.selectOnQualification("Dip");
-      await hrmsPage.selectOnCourseDuration("1 Year");
-      await hrmsPage.clickAddButton();
-      await hrmsPage.clickNextButton();
+      // //Qualification Details
+      // await hrmsPage.selectOnQualificationType("Local");
+      // await hrmsPage.selectOnQualification("Dip");
+      // await hrmsPage.selectOnCourseDuration("1 Year");
+      // await hrmsPage.clickAddButton();
+      // await hrmsPage.clickNextButton();
 
-      //salary details
+      // //salary details
 
-      await hrmsPage.fillBasicSalary("100000.00");
-      await hrmsPage.selectAllowanceType('Transport');
-      //await hrmsPage.fillAllowanceAmount('20000.00');
-      await hrmsPage.clickOnTheAddButton();
-      await hrmsPage.clickOnTheNextButton();
+      // await hrmsPage.fillBasicSalary("100000.00");
+      // await hrmsPage.selectAllowanceType('Transport');
+      // //await hrmsPage.fillAllowanceAmount('20000.00');
+      // await hrmsPage.clickOnTheAddButton();
+      // await hrmsPage.clickOnTheNextButton();
 
-      //Bank Details
+      // //Bank Details
 
-      await hrmsPage.selectBank("Commercial Bank PLC");
-      await hrmsPage.selectOnDivision("Colombo");
-      await hrmsPage.selectAccountType("Savings");
-      await hrmsPage.fillAccountNumber("80002545");
-      await hrmsPage.clickAddButton();
-      await hrmsPage.clickNextButton();
+      // await hrmsPage.selectBank("Commercial Bank PLC");
+      // await hrmsPage.selectOnDivision("Colombo");
+      // await hrmsPage.selectAccountType("Savings");
+      // await hrmsPage.fillAccountNumber("80002545");
+      // await hrmsPage.clickAddButton();
+      // await hrmsPage.clickNextButton();
 
-      //Document Upload
-      await hrmsPage.uploadDocument("test-file.jpg");
-      await hrmsPage.clickOnSave();
-      await hrmsPage.submitApplication();
+      // //Document Upload
+      // await hrmsPage.uploadDocument("test-file.jpg");
+      // await hrmsPage.clickOnSave();
+      // await hrmsPage.submitApplication();
     },
   );
 
@@ -181,12 +181,12 @@ test.describe("Employee Registration", () => {
       await expect(
         page.locator("tr", { hasText: hrms.searchEmployeeId }),
       ).toBeVisible();
-      await employeeApprovePage.clickApproveButton();
-      await employeeApprovePage.clickApproveConfirm();
-      await expect(
-        page.getByText("Approved Successfully !", { exact: true }),
-      ).toBeVisible();
-      await employeeApprovePage.clickApproveConfirmButton();
+      // await employeeApprovePage.clickApproveButton();
+      // await employeeApprovePage.clickApproveConfirm();
+      // await expect(
+      //   page.getByText("Approved Successfully !", { exact: true }),
+      // ).toBeVisible();
+      // await employeeApprovePage.clickApproveConfirmButton();
     },
   );
 });

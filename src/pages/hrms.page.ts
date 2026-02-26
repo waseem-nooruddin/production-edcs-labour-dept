@@ -77,7 +77,7 @@ export class HrmsPage {
 
   async enterMaritalStatus(status: string) {
     await this.page.locator("#root_civilStatus").click();
-    await this.page.getByRole('option', { name: status }).click();
+    await this.page.getByRole("option", { name: status }).click();
   }
 
   async clickSave() {
@@ -199,7 +199,10 @@ export class HrmsPage {
   }
 
   async clickLocationDetailsAddButton() {
-    await this.page.getByRole('option', { name: 'Married' }).click();
+    const addButtons = this.page.getByRole("button", { name: "ADD" });
+
+    await expect(addButtons).toHaveCount(2); // ensure 2 exist
+    await addButtons.nth(1).click();
   }
 
   async clickOnNextButton() {
@@ -228,16 +231,16 @@ export class HrmsPage {
 
   async selectProvince(province: string) {
     await this.page.locator("#root_residentialprovince").click();
-    await this.page.getByRole("option", { name: province }).click();
+    await this.page.getByRole("option", { name: province }).first().click();
   }
 
   async selectDistrict(district: string) {
     await this.page.locator("#root_district").click();
-    await this.page.getByRole("option", { name: district }).click();
+    await this.page.getByRole("option", { name: district }).first().click();
   }
 
   async selectCity(city: string) {
-    await this.page.locator("#root_cityTown").click();
+    await this.page.locator("#root_cityTown").first().click();
     await this.page.getByRole("option", { name: city }).click();
   }
 
@@ -365,7 +368,6 @@ export class HrmsPage {
   }
 
   async clickEditButton() {
-    await this.page.getByRole('button', { name: 'View' }).first().click();
+    await this.page.getByRole("button", { name: "View" }).first().click();
   }
-
 }
