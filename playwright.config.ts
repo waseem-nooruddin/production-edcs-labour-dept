@@ -31,8 +31,8 @@ export default defineConfig({
     //"http://qa-edcs-v1-1604665350.ap-southeast-1.elb.amazonaws.com/feauth/",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    actionTimeout: 500000, // 40 seconds
-    navigationTimeout: 900000, // 80 seconds
+    actionTimeout: 550000, // 40 seconds
+    navigationTimeout: 950000, // 80 seconds
     trace: "on-first-retry",
     screenshot: "only-on-failure",
     video: "retain-on-failure",

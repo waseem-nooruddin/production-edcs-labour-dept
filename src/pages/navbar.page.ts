@@ -41,4 +41,8 @@ export class NavBarPage {
     const HrmsPage = this.page.getByText("HRMS", { exact: true });
     await HrmsPage.click();
   }
+
+  async clickActivateEmployeeAccount(): Promise<void> {
+    await this.page.getByRole("button", { name: "Activate Employee Account" }).click();
+  }
 }

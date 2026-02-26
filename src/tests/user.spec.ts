@@ -16,7 +16,7 @@ test.describe("User Page", () => {
 
   test(
     "Verify navigation to New User ID Creation screen",
-    { tag: ["@smoke", "@TC_06", "@positive"] },
+    { tag: ["@smoke", "@TC_07", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -28,7 +28,7 @@ test.describe("User Page", () => {
 
   test(
     "Verify validation of Login ID and auto-population of user details",
-    { tag: ["@smoke", "@TC_07", "@positive"] },
+    { tag: ["@smoke", "@TC_08", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -45,7 +45,7 @@ test.describe("User Page", () => {
 
   test(
     "Verify successful creation of new user with selected role",
-    { tag: ["@smoke", "@TC_08", "@positive"] },
+    { tag: ["@smoke", "@TC_09", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -62,7 +62,7 @@ test.describe("User Page", () => {
 
   test(
     "Verify newly created user is displayed in View All Users grid",
-    { tag: ["@smoke", "@TC_09", "@positive"] },
+    { tag: ["@smoke", "@TC_10", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);

@@ -7,7 +7,7 @@ import { credentials } from "./resources/credentials";
 import { NavBarPage } from "../pages/navbar.page";
 import { testdata } from "./resources/testdata";
 
-test.describe("Menu Action List Page", () => {
+test.describe("role restriction Page", () => {
   let loginPage: LoginPage;
 
   test.beforeEach(async ({ page }) => {
@@ -17,7 +17,7 @@ test.describe("Menu Action List Page", () => {
 
   test(
     "Verify user page loads correctly",
-    { tag: ["@smoke", "@TC_25", "@positive1"] },
+    { tag: ["@smoke", "@TC_26", "@positive1"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -28,7 +28,7 @@ test.describe("Menu Action List Page", () => {
 
   test(
     "Verify role selection and display of existing allowed actions",
-    { tag: ["@smoke", "@TC_26", "@positive1"] },
+    { tag: ["@smoke", "@TC_27", "@positive1"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -44,7 +44,7 @@ test.describe("Menu Action List Page", () => {
 
   test(
     "Verify adding a new allowed action to a role",
-    { tag: ["@smoke", "@TC_27", "@positive1"] },
+    { tag: ["@smoke", "@TC_28", "@positive1"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -62,7 +62,7 @@ test.describe("Menu Action List Page", () => {
 
   test(
     "Verify restricting (removing) an existing action from a role",
-    { tag: ["@smoke", "@TC_28", "@positive"] },
+    { tag: ["@smoke", "@TC_29", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);

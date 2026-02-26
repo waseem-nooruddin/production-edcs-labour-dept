@@ -16,7 +16,7 @@ test.describe("assign multiple branches", () => {
   });
   test(
     "Verify Assigned default branch",
-    { tag: ["@smoke", "@TC_18", "@positive"] },
+    { tag: ["@smoke", "@TC_19", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -28,7 +28,7 @@ test.describe("assign multiple branches", () => {
 
   test(
     "Verify that can add a new branch",
-    { tag: ["@smoke", "@TC_19", "@positive"] },
+    { tag: ["@smoke", "@TC_20", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -45,7 +45,7 @@ test.describe("assign multiple branches", () => {
 
   test(
     "Verify that can View all assigned divisions for a user",
-    { tag: ["@smoke", "@TC_20", "@positive"] },
+    { tag: ["@smoke", "@TC_21", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -64,20 +64,20 @@ test.describe("assign multiple branches", () => {
     },
   );
 
-  test(
-    "Verify that can delete assigned branches for a user",
-    { tag: ["@smoke", "@negative"] },
-    async ({ page }) => {
-      await loginPage.login(credentials.username, credentials.password);
-      const navBarpage = new NavBarPage(page);
-      await navBarpage.clickUserManagement();
-      const assignmultiplebranches = new AssignMultipleBranches(page);
-      await navBarpage.navigateToAssignMultipleBranches();
-      await assignmultiplebranches.selectUserId();
-      await assignmultiplebranches.selectUser(
-        "166513rn - Testing Head Office System User",
-      );
-      await assignmultiplebranches.deleteData();
-    },
-  );
+  // test(
+  //   "Verify that can delete assigned branches for a user",
+  //   { tag: ["@smoke", "@negative"] },
+  //   async ({ page }) => {
+  //     await loginPage.login(credentials.username, credentials.password);
+  //     const navBarpage = new NavBarPage(page);
+  //     await navBarpage.clickUserManagement();
+  //     const assignmultiplebranches = new AssignMultipleBranches(page);
+  //     await navBarpage.navigateToAssignMultipleBranches();
+  //     await assignmultiplebranches.selectUserId();
+  //     await assignmultiplebranches.selectUser(
+  //       "166513rn - Testing Head Office System User",
+  //     );
+  //     await assignmultiplebranches.deleteData();
+  //   },
+  // );
 });

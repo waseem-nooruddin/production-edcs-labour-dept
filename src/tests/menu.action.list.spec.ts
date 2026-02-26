@@ -16,7 +16,7 @@ test.describe("Menu Action List Page", () => {
   });
   test(
     "Verify Menu Action List page loads correctly",
-    { tag: ["@smoke", "@TC_21", "@positive"] },
+    { tag: ["@smoke", "@TC_22", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);

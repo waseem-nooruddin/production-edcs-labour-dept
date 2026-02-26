@@ -75,9 +75,9 @@ export class HrmsPage {
     await this.page.fill("#root_nicIssuedDate", date);
   }
 
-  async enterMaritalStatus(status: "Married") {
+  async enterMaritalStatus(status: string) {
     await this.page.locator("#root_civilStatus").click();
-    await this.page.getByRole("option", { name: "Unmarried" }).click();
+    await this.page.getByRole('option', { name: status }).click();
   }
 
   async clickSave() {
@@ -144,7 +144,7 @@ export class HrmsPage {
 
   async enterpersonalGrade(grade: string) {
     await this.page.locator("#root_personalGrade").click();
-    await this.page.getByRole('option', { name: grade }).click();
+    await this.page.getByRole("option", { name: grade }).click();
   }
 
   async enterCostCenter(costCenter: string) {
@@ -172,7 +172,14 @@ export class HrmsPage {
     await this.page.getByRole("option", { name: reportingPerson }).click();
   }
 
-  async clickAddButton() {
+  async enterReportingDesignation(reportingDesignation: string) {
+    await this.page.locator("#root_reportingDesignation").click();
+    await this.page
+      .locator("#root_reportingDesignation")
+      .fill(reportingDesignation);
+  }
+
+  async clickOnAddButton() {
     await this.page.getByRole("button", { name: "ADD" }).first().click();
   }
 
@@ -192,6 +199,173 @@ export class HrmsPage {
   }
 
   async clickLocationDetailsAddButton() {
+    await this.page.getByRole('option', { name: 'Married' }).click();
+  }
+
+  async clickOnNextButton() {
+    await this.page.getByRole("button", { name: "Next" }).click();
+  }
+
+  /////
+
+  async fillAddressLine1(value: string) {
+    await this.page
+      .getByRole("textbox", { name: /Residential Address \(Line 01/i })
+      .fill(value);
+  }
+
+  async fillAddressLine2(value: string) {
+    await this.page
+      .getByRole("textbox", { name: /Residential Address \(Line 02/i })
+      .fill(value);
+  }
+
+  async fillAddressLine3(value: string) {
+    await this.page
+      .getByRole("textbox", { name: /Residential Address \(Line 03/i })
+      .fill(value);
+  }
+
+  async selectProvince(province: string) {
+    await this.page.locator("#root_residentialprovince").click();
+    await this.page.getByRole("option", { name: province }).click();
+  }
+
+  async selectDistrict(district: string) {
+    await this.page.locator("#root_district").click();
+    await this.page.getByRole("option", { name: district }).click();
+  }
+
+  async selectCity(city: string) {
+    await this.page.locator("#root_cityTown").click();
+    await this.page.getByRole("option", { name: city }).click();
+  }
+
+  async fillEmail(email: string) {
+    await this.page.locator("#root_email").fill(email);
+  }
+
+  async fillMobile(mobile: string) {
+    await this.page.locator("#root_mobile").fill(mobile);
+  }
+
+  async fillEmergencyName(name: string) {
+    await this.page.getByRole("textbox", { name: /^Name\*/i }).fill(name);
+  }
+
+  async fillRelationship(value: string) {
+    await this.page
+      .getByRole("textbox", { name: /^Relationship\*/i })
+      .fill(value);
+  }
+
+  async fillEmergencyMobile(value: string) {
+    await this.page.getByRole("textbox", { name: /^Mobile No\*/i }).fill(value);
+  }
+
+  async fillTelephone(value: string) {
+    await this.page.getByRole("textbox", { name: /^Telephone\*/i }).fill(value);
+  }
+
+  async selectOnQualificationType(option: string) {
+    await this.page.getByRole("button", { name: "Qualification Type" }).click();
+    await this.page.getByRole("option", { name: option }).click();
+  }
+
+  async selectOnQualification(option: string) {
+    await this.page.getByRole("button", { name: "Qualification*" }).click();
+    await this.page.getByRole("option", { name: option }).click();
+  }
+
+  async selectCourseDuration(option: string) {
+    await this.page.getByRole("button", { name: "Duration of Course" }).click();
+    await this.page.getByRole("option", { name: option }).click();
+  }
+
+  async clickAddButton() {
     await this.page.getByRole("button", { name: "ADD" }).click();
   }
+
+  async clickNextButton() {
+    await this.page.getByRole("button", { name: "NEXT" }).click();
+  }
+
+  async selectQualificationType(option: string) {
+    await this.page.getByRole("button", { name: "Qualification Type" }).click();
+    await this.page.getByRole("option", { name: option }).click();
+  }
+
+  async selectQualification(option: string) {
+    await this.page.getByRole("button", { name: "Qualification*" }).click();
+    await this.page.getByRole("option", { name: option }).click();
+  }
+
+  async selectOnCourseDuration(option: string) {
+    await this.page.getByRole("button", { name: "Duration of Course" }).click();
+    await this.page.getByRole("option", { name: option }).click();
+  }
+
+  async clickOnTheAddButton() {
+    await this.page.getByRole("button", { name: "ADD" }).click();
+  }
+
+  async clickOnTheNextButton() {
+    await this.page.getByRole("button", { name: "NEXT" }).click();
+  }
+
+  async fillBasicSalary(salary: string) {
+    await this.page
+      .getByRole("spinbutton", { name: "Basic Salary*" })
+      .fill(salary);
+  }
+
+  async selectAllowanceType(type: string) {
+    await this.page.getByRole("button", { name: "Allowance Type*" }).click();
+    await this.page.getByRole("option", { name: type }).click();
+  }
+
+  async selectBank(bank: string) {
+    await this.page.getByRole("button", { name: "Bank Name*" }).click();
+    await this.page.getByRole("option", { name: bank }).click();
+  }
+
+  async selectOnDivision(division: string) {
+    await this.page.getByRole("button", { name: "Division Name*" }).click();
+    await this.page.getByRole("option", { name: division }).click();
+  }
+
+  async selectAccountType(type: string) {
+    await this.page.getByRole("button", { name: "Account Type*" }).click();
+    await this.page.getByRole("option", { name: type }).click();
+  }
+
+  async fillAccountNumber(number: string) {
+    await this.page.getByRole("textbox", { name: "Account No*" }).fill(number);
+  }
+
+  async uploadDocument(filePath: string) {
+    const fileInput = this.page.locator('input[type="file"]').first();
+    await fileInput.setInputFiles(filePath);
+  }
+
+  async clickOnSave() {
+    await this.page.getByRole("button", { name: "Save" }).click();
+  }
+
+  async submitApplication() {
+    await this.page.getByRole("button", { name: "SUBMIT" }).click();
+    await this.page.getByRole("button", { name: "Continue" }).click();
+  }
+
+  ///search employee
+
+  async searchEmployeeId(employeeId: string) {
+    await this.page.locator("#outlined-basic").fill(employeeId);
+    await this.page.getByRole("button", { name: "Search" }).click();
+  }
+
+  async clickEditButton() {
+    await this.page.getByRole('button', { name: 'View' }).first().click();
+  }
+
 }

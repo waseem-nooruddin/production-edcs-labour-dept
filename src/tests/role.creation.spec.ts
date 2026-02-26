@@ -15,7 +15,7 @@ test.describe("Role Creation Page", () => {
 
   test(
     "Verify navigation to Role Creation page",
-    { tag: ["@smoke", "@TC_22", "@positive1"] },
+    { tag: ["@smoke", "@TC_23", "@positive1"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -29,7 +29,7 @@ test.describe("Role Creation Page", () => {
 
   test(
     "Verify Add New role action",
-    { tag: ["@smoke", "@TC_23", "@positive1"] },
+    { tag: ["@smoke", "@TC_24", "@positive1"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -45,7 +45,7 @@ test.describe("Role Creation Page", () => {
 
   test(
     "Verify successful creation of a new role",
-    { tag: ["@smoke", "@TC_24", "@positive1"] },
+    { tag: ["@smoke", "@TC_25", "@positive1"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);

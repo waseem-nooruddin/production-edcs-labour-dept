@@ -16,7 +16,7 @@ test.describe("User Restrictions", () => {
 
   test(
     "Verify navigation to User Restrictions page",
-    { tag: ["@smoke", "@TC_29", "@positive"] },
+    { tag: ["@smoke", "@TC_30", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -32,7 +32,7 @@ test.describe("User Restrictions", () => {
 
   test(
     "Verify branch selection and user list display",
-    { tag: ["@smoke", "@TC_30", "@positive"] },
+    { tag: ["@smoke", "@TC_31", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -50,7 +50,7 @@ test.describe("User Restrictions", () => {
 
   test(
     "Verify user selection from the list",
-    { tag: ["@smoke", "@TC_31", "@positive"] },
+    { tag: ["@smoke", "@TC_32", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -69,7 +69,7 @@ test.describe("User Restrictions", () => {
 
   test(
     "Verify adding a new restriction to the user",
-    { tag: ["@smoke", "@TC_32", "@positive"] },
+    { tag: ["@smoke", "@TC_33", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);

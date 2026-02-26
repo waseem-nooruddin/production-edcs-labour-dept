@@ -4,10 +4,10 @@ export const testdata = {
   searchingUser: "166516 - Testing Five ",
 
   // User Management - Login IDs
-  Employee_Number: "166526",
-  Emplloyee_EPFNumber: "166526",
+  Employee_Number: "17631",
+  Emplloyee_EPFNumber: "17631",
 
-  loginId_Authorization: "166526",
+  loginId_Authorization: "17631",
   userId_Restriction: "166509rn - Qa One",
 
   // Branch Data

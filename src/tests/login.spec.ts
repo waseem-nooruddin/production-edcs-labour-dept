@@ -10,7 +10,7 @@ test.describe("Login Tests", () => {
     await loginPage.navigateToLoginPage();
   });
 
-  test("valid login", { tag: ["@smoke", "@TC_33", "@positive"] }, async ({ page }) => {
+  test("valid login", { tag: ["@smoke", "@TC_17", "@positive"] }, async ({ page }) => {
     await loginPage.login(credentials.username, credentials.password);
   });
 });

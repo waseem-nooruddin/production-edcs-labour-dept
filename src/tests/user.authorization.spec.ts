@@ -17,7 +17,7 @@ test.describe("User Authorization", () => {
 
   test(
     "Verify newly created user is displayed in User Authorization page",
-    { tag: ["@smoke", "@TC_10", "@positive"] },
+    { tag: ["@smoke", "@TC_11", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -31,7 +31,7 @@ test.describe("User Authorization", () => {
 
   test(
     "Verify authorize button is available for pending users",
-    { tag: ["@smoke", "@TC_11", "@positive"] },
+    { tag: ["@smoke", "@TC_12", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
@@ -46,7 +46,7 @@ test.describe("User Authorization", () => {
 
   test(
     "Verify successful authorization of user",
-    { tag: ["@smoke", "@TC_12", "@positive"] },
+    { tag: ["@smoke", "@TC_13", "@positive"] },
     async ({ page }) => {
       await loginPage.login(credentials.username, credentials.password);
       const navBarpage = new NavBarPage(page);
