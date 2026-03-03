@@ -2,7 +2,13 @@ import { Page, expect } from "@playwright/test";
 import path from "path";
 
 export class HrmsPage {
-  constructor(private page: Page) {}
+  constructor(private page: Page) { }
+
+  private async waitForPopoverClose() {
+    await expect(
+      this.page.locator('.MuiPopover-root').filter({ visible: true })
+    ).toHaveCount(0);
+  }
 
   // ================= Personal Details =================
 
@@ -155,9 +161,11 @@ export class HrmsPage {
   async enterjobCategory(jobCategory: string) {
     await this.page.locator("#root_jobCategory").click();
     await this.page.getByRole("option", { name: jobCategory }).click();
+    await this.waitForPopoverClose();
   }
 
   async enterCurrentDesignation(currentDesignation: string) {
+    await this.waitForPopoverClose();
     await this.page.locator("#root_currentDesignation").click();
     await this.page.getByRole("option", { name: currentDesignation }).click();
   }
@@ -191,9 +199,11 @@ export class HrmsPage {
   async enterTemporaryLocation(temporaryLocation: string) {
     await this.page.locator("#root_temporaryLocation").click();
     await this.page.getByRole("option", { name: temporaryLocation }).click();
+    await this.waitForPopoverClose();
   }
 
   async enterfromDate(fromDate: string) {
+    await this.waitForPopoverClose();
     await this.page.locator("#root_fromDate").click();
     await this.page.locator("#root_fromDate").fill(fromDate);
   }
@@ -235,6 +245,7 @@ export class HrmsPage {
   }
 
   async selectDistrict(district: string) {
+<<<<<<< HEAD
     await this.page.locator("#root_district").click();
     await this.page.getByRole("option", { name: district }).first().click();
   }
@@ -242,6 +253,46 @@ export class HrmsPage {
   async selectCity(city: string) {
     await this.page.locator("#root_cityTown").first().click();
     await this.page.getByRole("option", { name: city }).click();
+=======
+    // Wait for any MUI popover to finish closing
+    const popover = this.page.locator('.MuiPopover-root');
+    if (await popover.count()) {
+      await expect(popover).toBeHidden();
+    }
+
+    // Scope strictly to Residential Address section
+    const residentialSection = this.page.locator('div', {
+      has: this.page.getByText('Residential Address', { exact: true }),
+    });
+
+    const districtButton = residentialSection.getByRole('button', {
+      name: /^District\*/i,
+    });
+
+    await districtButton.click();
+
+    // Target only visible listbox
+    const listbox = this.page.getByRole('listbox').filter({ hasText: district });
+    await expect(listbox).toBeVisible();
+
+    await listbox.getByRole('option', { name: district }).click();
+    await expect(listbox).toBeHidden();
+  }
+
+  async selectCity(city: string) {
+    await this.page
+      .getByRole('button', { name: /^City \/ Town\*/i })
+      .first()
+      .click();
+
+    const option = this.page
+      .getByRole('listbox')
+      .filter({ has: this.page.getByRole('option', { name: city }) })
+      .getByRole('option', { name: city });
+
+    await expect(option).toBeVisible();
+    await option.click();
+>>>>>>> 68bece9 (fix: resolve MUI Popover strict mode violations and selectDistrict scoping issue)
   }
 
   async fillEmail(email: string) {

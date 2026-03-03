@@ -63,21 +63,4 @@ test.describe("assign multiple branches", () => {
       await assignmultiplebranches.clickSaveButton();
     },
   );
-
-  // test(
-  //   "Verify that can delete assigned branches for a user",
-  //   { tag: ["@smoke", "@negative"] },
-  //   async ({ page }) => {
-  //     await loginPage.login(credentials.username, credentials.password);
-  //     const navBarpage = new NavBarPage(page);
-  //     await navBarpage.clickUserManagement();
-  //     const assignmultiplebranches = new AssignMultipleBranches(page);
-  //     await navBarpage.navigateToAssignMultipleBranches();
-  //     await assignmultiplebranches.selectUserId();
-  //     await assignmultiplebranches.selectUser(
-  //       "166513rn - Testing Head Office System User",
-  //     );
-  //     await assignmultiplebranches.deleteData();
-  //   },
-  // );
 });

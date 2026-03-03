@@ -13,7 +13,7 @@ export const testdata = {
   hrms_nic: "199629810095",
   hrms_nicDateOfIssue: "2010-01-01",
   hrms_enterMaritalStatus: "UnMarried",
-  
+
   // HRMS - Employee Registration (Employment Details)
   hrms_dateOfJoin: "2026-01-01",
   hrms_noticeDate: "ONE MONTH",
@@ -31,18 +31,18 @@ export const testdata = {
   hrms_enterTemporaryLocation: "Head office  ",
   hrms_enterfromDate: "2026-01-01",
 
-  hrms_AddressLine1 : "125 Colombo 10",
-  hrms_AddressLine2 : "125 Colombo 10",
-  hrms_AddressLine3 : "Nugegoda",
-  hrms_province : "Northern",
-  hrms_district : "Jaffna",
-  hrms_city : "Atchuveli",
-  hrms_fillEmail : "waseem10nooruddin@gmail.com",
-  hrms_fillMobile : "0766395531",
-  hrms_fillEmergencyName : "Suha",
-  hrms_fillRelationship : "Mother",
-  hrms_fillEmergencyMobile : "078554322",
-  hrms_fillTelephone : "0112864236",
+  hrms_AddressLine1: "125 Colombo 10",
+  hrms_AddressLine2: "125 Colombo 10",
+  hrms_AddressLine3: "Nugegoda",
+  hrms_province: "Northern",
+  hrms_district: "Jaffna",
+  hrms_city: "Atchuveli",
+  hrms_fillEmail: "waseem10nooruddin@gmail.com",
+  hrms_fillMobile: "0766395531",
+  hrms_fillEmergencyName: "Suha",
+  hrms_fillRelationship: "Mother",
+  hrms_fillEmergencyMobile: "078554322",
+  hrms_fillTelephone: "0112864236",
 
 
   Employee_Number: "345567",
